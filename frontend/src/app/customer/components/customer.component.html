@@ -1,0 +1,24 @@
+<h1>Customer List</h1>
+
+<table class="table table-bordered" style="max-width: 576px">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customerList">
+      <th scope="row">{{ customer.id }}</th>
+      <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+      <td>{{ customer.email }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteCustomer(customer.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

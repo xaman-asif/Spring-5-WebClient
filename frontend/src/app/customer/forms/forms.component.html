@@ -1,0 +1,32 @@
+<div class="container-fluid">
+  <h2>Customer Registration Form</h2>
+
+  {{ registrationForm.value | json }}
+
+  <hr />
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="registrationForm">
+    <div class="form-group">
+      <label>Firstname: </label>
+      <input class="form-control" formControlName="firstName" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Lastname: </label>
+      <input class="form-control" formControlName="lastName" type="text" />
+    </div>
+
+    <div class="form-group">
+      <label>Email: </label>
+      <input class="form-control" formControlName="email" type="text" />
+    </div>
+
+    <button
+      [disabled]="!registrationForm.valid"
+      class="btn btn-primary"
+      type="submit"
+    >
+      Register
+    </button>
+  </form>
+</div>
